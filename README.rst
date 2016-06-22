@@ -1,22 +1,33 @@
-# Django-wechat-feedback
+基于django-wechat-member的留言系统
+===================================
 
-feedback base django.
-Detailed documentation is in the "docs" directory
 
-## Quick start
+快速开始
+---------
 
-1. Add "feedback" to your INSTALLED_APPS setting like this:
-    ```
+安装django-wechat-feedback:
+
+.. code-block::
+
+    pip install django-wechat-feedback
+
+在settings.py文件中添加feedback:
+
+.. code-block::
+
     INSTALLED_APPS = (
         ...
-        'wechat',
-        'wechat_member',
         'feedback',
     )
-    ```
 
-2. Include the feedback URLconf in your project urls.py like this:
-   `url(r'^feedback', include('feedback.urls')),`
+在urls.py文件中添加:
 
-5. Run `python manage.py migrate` to create the wechat models.
+.. code-block::
 
+    url(r'^feedback/', include('feedback.urls')),
+
+更新数据库:
+
+.. code-block::
+
+    python manage.py migrate
